@@ -1,4 +1,4 @@
-﻿using AbstractFactory.Services.Interfaces;
+﻿using AbstractFactory.Abstractions.Payment;
 
 namespace AbstractFactory.Services.Stripe;
 

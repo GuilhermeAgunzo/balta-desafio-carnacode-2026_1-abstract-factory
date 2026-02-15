@@ -1,4 +1,4 @@
-﻿namespace AbstractFactory.Services.Interfaces;
+﻿namespace AbstractFactory.Abstractions.Payment;
 
 public interface IPaymentLogger
 {
