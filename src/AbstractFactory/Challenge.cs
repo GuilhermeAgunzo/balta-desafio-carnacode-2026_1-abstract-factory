@@ -8,32 +8,6 @@ namespace DesignPatternChallenge
     // Contexto: Sistema de pagamentos que precisa trabalhar com diferentes gateways
     // Cada gateway tem sua própria forma de processar, validar e logar transações
 
-    // Componentes do MercadoPago
-    public class MercadoPagoValidator
-    {
-        public bool ValidateCard(string cardNumber)
-        {
-            Console.WriteLine("MercadoPago: Validando cartão...");
-            return cardNumber.Length == 16 && cardNumber.StartsWith("5");
-        }
-    }
-
-    public class MercadoPagoProcessor
-    {
-        public string ProcessTransaction(decimal amount, string cardNumber)
-        {
-            Console.WriteLine($"MercadoPago: Processando R$ {amount}...");
-            return $"MP-{Guid.NewGuid().ToString().Substring(0, 8)}";
-        }
-    }
-
-    public class MercadoPagoLogger
-    {
-        public void Log(string message)
-        {
-            Console.WriteLine($"[MercadoPago Log] {DateTime.Now}: {message}");
-        }
-    }
 
     // Componentes do Stripe
     public class StripeValidator
