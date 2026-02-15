@@ -1,21 +1,21 @@
 ﻿using AbstractFactory.Services.Interfaces;
-using DesignPatternChallenge;
 
 namespace AbstractFactory.Services;
 
 public class PaymentService : IPaymentService
 {
-    private readonly string _gateway;
+    private readonly IPaymentProviderFactory _paymentProviderFactory;
 
-    public PaymentService(string gateway)
+    public PaymentService(IPaymentProviderFactory paymentProviderFactory)
     {
-        _gateway = gateway;
+        _paymentProviderFactory = paymentProviderFactory;
     }
 
     public void ProcessPayment(decimal amount, string cardNumber)
     {
         // Problema: Switch case gigante para cada gateway
         // Quando adicionar novo gateway, precisa modificar este método
+
         switch (_gateway.ToLower())
         {
             case "pagseguro":
